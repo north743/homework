@@ -1,0 +1,19 @@
+# PyCharm и системные файлы
+.idea/
+*.iml
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Тестирование
+.pytest_cache/
+.coverage
+
+# Виртуальные окружения
+venv/
+.venv/
+env/
