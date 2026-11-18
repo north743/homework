@@ -1,34 +1,35 @@
+"""Фильтрация и сортировка банковских операций."""
+
 from typing import Any
 
 
 def filter_by_state(
-    data: list[dict[str, Any]], state: str = "EXECUTED"
+    operations: list[dict[str, Any]],
+    state: str = "EXECUTED",
 ) -> list[dict[str, Any]]:
-    """Фильтрует список словарей по значению ключа 'state'.
+    """Отфильтровать операции по статусу.
 
     Args:
-        data: Список словарей с данными о банковских операциях.
-        state: Значение ключа 'state' для фильтрации.
-            По умолчанию 'EXECUTED'.
+        operations: Список словарей с операциями.
+        state: Статус для фильтрации (по умолчанию 'EXECUTED').
 
     Returns:
-        Новый список словарей, у которых ключ 'state' равен
-        заданному значению.
+        Отфильтрованный список операций.
     """
-    return [item for item in data if item.get("state") == state]
+    return [op for op in operations if op.get("state") == state]
 
 
 def sort_by_date(
-    data: list[dict[str, Any]], reverse: bool = True
+    operations: list[dict[str, Any]],
+    reverse: bool = True,
 ) -> list[dict[str, Any]]:
-    """Сортирует список словарей по дате (ключ 'date').
+    """Отсортировать операции по полю 'date'.
 
     Args:
-        data: Список словарей с данными о банковских операциях.
-        reverse: Порядок сортировки. True — по убыванию (по умолчанию),
-            False — по возрастанию.
+        operations: Список словарей с операциями.
+        reverse: True — по убыванию (по умолчанию), False — по возрастанию.
 
     Returns:
-        Новый список словарей, отсортированный по дате.
+        Отсортированный список операций.
     """
-    return sorted(data, key=lambda item: item.get("date", ""), reverse=reverse)
+    return sorted(operations, key=lambda op: op.get("date", ""), reverse=reverse)
