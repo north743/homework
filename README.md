@@ -18,5 +18,5 @@ GitFlow, PEP 8, атомарных коммитов и код-ревью чер�
 1. Клонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/<ваш-логин>/bank-operations-widget.git
+   git clone https://github.com/north743/bank-operations-widget.git
    cd bank-operations-widget
